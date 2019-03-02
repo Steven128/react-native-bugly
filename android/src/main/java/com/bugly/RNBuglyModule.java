@@ -45,7 +45,10 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
    */
   public static void init(Context context, String appId, boolean isDebug) {
     // true 表示初始化时自动检查升级，false 表示不会自动检查升级，需要手动调用 Beta.checkUpgrade() 方法
-    Beta.autoCheckUpgrade = false;
+    Beta.autoCheckUpgrade = true;
+    Beta.largeIconId = R.mipmap.ic_launcher;
+    Beta.smallIconId = R.mipmap.ic_launcher;
+    Beta.enableNotification = true;
     Bugly.init(context, appId, isDebug);
   }
 
